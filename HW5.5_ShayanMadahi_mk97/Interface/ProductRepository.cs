@@ -56,7 +56,7 @@ namespace HW5._5_ShayanMadahi_mk97.Interface
 
         public List<Product> GetProductList()
         {
-            throw new NotImplementedException();
+            return products;
         }
         
         public bool CheckName(string name) 
