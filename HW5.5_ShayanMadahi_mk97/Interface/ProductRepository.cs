@@ -13,19 +13,22 @@ namespace HW5._5_ShayanMadahi_mk97.Interface
     public class ProductRepository : IProductRepository
     {
         public bool Test;
-        private List<Product> products;
-        public ProductRepository()
-        {
-            string? solutionFolderPath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.Parent?.FullName;
-            string solutionPath = Path.Combine(solutionFolderPath, "DataBase");
-            string FilePath = Path.Combine(solutionPath, "ProductJson.json");
-            FileStream JsonProductFile = File.Open(FilePath, FileMode.OpenOrCreate);
+        public List<Product>products= new List<Product>();
+        private string FilePath= "D:\\HW5.5_ShayanMadahi_mk97\\HW5.5_ShayanMadahi_mk97\\DataBase\\ProductJson.json";
+        //public ProductRepository()
+        //{
 
-            products = JsonSerializer.Deserialize<List<Product>>(JsonProductFile);
-        }
+        //    FileStream JsonSeri = File.Open(FilePath, FileMode.OpenOrCreate);
+        //    products = JsonSerializer.Deserialize<List<Product>>(JsonSeri);
+        //}
         public string AddProduct(Product product)
         {
             CheckName(product.Name);
+            if (Test)
+            {
+                products.Add(product);
+                JsonWriter();
+            }
             return "done";
         }
 
@@ -45,8 +48,12 @@ namespace HW5._5_ShayanMadahi_mk97.Interface
             Test = regex.IsMatch(name);
             if (!Test)
                 Console.WriteLine("not Correct!!");
-            return Test;
-            
+            return Test;    
+        }
+        public void JsonWriter()
+        {
+            string JsonSerie=JsonSerializer.Serialize(products);
+            File.WriteAllText(FilePath, JsonSerie);
         }
 
     }
