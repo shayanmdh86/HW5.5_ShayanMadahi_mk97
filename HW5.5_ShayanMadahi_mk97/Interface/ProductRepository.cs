@@ -16,6 +16,8 @@ namespace HW5._5_ShayanMadahi_mk97.Interface
         private bool Test;
         private List<Product>products= new List<Product>();
         public string FilePath ="D:\\HW5.5_ShayanMadahi_mk97\\HW5.5_ShayanMadahi_mk97\\DataBase\\ProductJson.json";
+        string Nameproduct;
+
         public ProductRepository()
         {
 
@@ -33,8 +35,6 @@ namespace HW5._5_ShayanMadahi_mk97.Interface
             {
                 Console.WriteLine(Exception.Message);
             }
-
-
             if (Test)
             {
                 products.Add(product);
@@ -45,7 +45,13 @@ namespace HW5._5_ShayanMadahi_mk97.Interface
 
         public string GetProductById(int id)
         {
-            throw new NotImplementedException();
+               
+            var result =products.Where(x=>x.ProductId== id).Select(x=> x.Name).ToList();
+            foreach (var item in result)
+            {
+                Nameproduct = item;
+            }
+            return Nameproduct;
         }
 
         public List<Product> GetProductList()

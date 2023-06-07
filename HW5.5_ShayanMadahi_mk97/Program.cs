@@ -8,12 +8,9 @@ namespace HW5._5_ShayanMadahi_mk97
         static void Main(string[] args)
         {
             ProductRepository servic=new ProductRepository();
-            int ProductId = 2;
-            string Name = "Qelw4u1_78";
-            string Barcode = "7";
-            Product product = new Product(ProductId,Name,Barcode);
+            servic.GetProductById(1);
       
-            servic.AddProduct(product);
+            
         }
     }
 }
