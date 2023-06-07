@@ -12,15 +12,16 @@ namespace HW5._5_ShayanMadahi_mk97.Interface
 {
     public class ProductRepository : IProductRepository
     {
-        public bool Test;
-        public List<Product>products= new List<Product>();
-        private string FilePath= "D:\\HW5.5_ShayanMadahi_mk97\\HW5.5_ShayanMadahi_mk97\\DataBase\\ProductJson.json";
-        //public ProductRepository()
-        //{
+        private bool Test;
+        private List<Product>products= new List<Product>();
+        public string FilePath ="D:\\HW5.5_ShayanMadahi_mk97\\HW5.5_ShayanMadahi_mk97\\DataBase\\ProductJson.json";
+        public ProductRepository()
+        {
 
-        //    FileStream JsonSeri = File.Open(FilePath, FileMode.OpenOrCreate);
-        //    products = JsonSerializer.Deserialize<List<Product>>(JsonSeri);
-        //}
+            FileStream JsonSeri = File.Open(FilePath, FileMode.OpenOrCreate);
+            products = JsonSerializer.Deserialize<List<Product>>(JsonSeri);
+            JsonSeri.Close();
+        }
         public string AddProduct(Product product)
         {
             CheckName(product.Name);
