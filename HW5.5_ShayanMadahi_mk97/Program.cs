@@ -1,5 +1,6 @@
 ﻿using HW5._5_ShayanMadahi_mk97.Domain;
 using HW5._5_ShayanMadahi_mk97.Interface;
+using HW5._5_ShayanMadahi_mk97.Interface.Exception;
 
 namespace HW5._5_ShayanMadahi_mk97
 {
@@ -8,6 +9,17 @@ namespace HW5._5_ShayanMadahi_mk97
         static void Main(string[] args)
         {
             ProductRepository servic=new ProductRepository();
+            try
+            {
+                var pr = servic.GetProductList();
+            }
+            catch(Exception ex) 
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+          
+
         }
     }
 }

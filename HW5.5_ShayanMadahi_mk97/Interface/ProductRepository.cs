@@ -45,8 +45,11 @@ namespace HW5._5_ShayanMadahi_mk97.Interface
 
         public string GetProductById(int id)
         {
-               
-            var result =products.Where(x=>x.ProductId== id).Select(x=> x.Name).ToList();
+            var result = products.Where(x => x.ProductId == id).Select(x => x.Name).ToList();
+            if (result.Count==0)
+            {
+                throw new UnsuccessfulSearch();
+            }
             foreach (var item in result)
             {
                 Nameproduct = item;
@@ -56,6 +59,10 @@ namespace HW5._5_ShayanMadahi_mk97.Interface
 
         public List<Product> GetProductList()
         {
+            if (products.Count==0)
+            {
+                throw new OutOfStockException();
+            }
             return products;
         }
         
