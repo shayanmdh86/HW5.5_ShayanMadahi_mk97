@@ -9,7 +9,7 @@ namespace HW5._5_ShayanMadahi_mk97
         {
             ProductRepository servic=new ProductRepository();
             int ProductId = 2;
-            string Name = "Qelu1_78";
+            string Name = "Qelw4u1_78";
             string Barcode = "7";
             Product product = new Product(ProductId,Name,Barcode);
       
