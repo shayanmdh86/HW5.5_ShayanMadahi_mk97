@@ -1,4 +1,5 @@
 ﻿using HW5._5_ShayanMadahi_mk97.Domain;
+using HW5._5_ShayanMadahi_mk97.Interface.Exception;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,16 @@ namespace HW5._5_ShayanMadahi_mk97.Interface
         }
         public string AddProduct(Product product)
         {
-            CheckName(product.Name);
+            try
+            {
+                CheckName(product.Name);
+            }
+            catch(IncorrectProductNameFormat Exception)
+            {
+                Console.WriteLine(Exception.Message);
+            }
+
+
             if (Test)
             {
                 products.Add(product);
@@ -48,7 +58,7 @@ namespace HW5._5_ShayanMadahi_mk97.Interface
             Regex regex = new Regex(@"^[A-Z][a-z]{3}[1-9]{1}[_]{1}[1-9]{2}$");
             Test = regex.IsMatch(name);
             if (!Test)
-                Console.WriteLine("not Correct!!");
+                throw new IncorrectProductNameFormat();
             return Test;    
         }
         public void JsonWriter()
