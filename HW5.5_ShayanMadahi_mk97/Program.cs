@@ -8,8 +8,9 @@ namespace HW5._5_ShayanMadahi_mk97
     {
         static void Main(string[] args)
         {
-            { 
-                
+
+            {
+                Product product = product();
             }
         }
     }
