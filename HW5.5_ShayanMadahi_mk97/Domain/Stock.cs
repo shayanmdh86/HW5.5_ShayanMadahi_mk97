@@ -13,5 +13,13 @@ namespace HW5._5_ShayanMadahi_mk97.Domain
         public int ProductId { get; set; }
         public int ProductQuantity { get; set; }
         public int ProductPrice { get; set; }
+        public Stock(int stockId, string name, int productId, int productQuantity, int productPrice)
+        {
+            StockId = stockId;
+            Name = name;
+            ProductId = productId;
+            ProductQuantity = productQuantity;
+            ProductPrice = productPrice;
+        }
     }
 }

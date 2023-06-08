@@ -1,5 +1,9 @@
-{
-  [
-
-  ]
-}
+[
+  {
+    "StockId": 1,
+    "Name": "Telu1_36",
+    "ProductId": 1,
+    "ProductQuantity": 2,
+    "ProductPrice": 1000
+  }
+]
