@@ -13,7 +13,7 @@ namespace HW5._5_ShayanMadahi_mk97
                 Product product = product();
                 ProductRepository productRepository = new ProductRepository();
                 Stock stock = new stock();
-                //define menu 
+                //define menu
             }
         }
     }
