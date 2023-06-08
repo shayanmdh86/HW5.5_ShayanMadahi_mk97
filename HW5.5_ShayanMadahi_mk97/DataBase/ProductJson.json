@@ -8,5 +8,15 @@
     "ProductId": 2,
     "Name": "Qelu1_78",
     "Barcode": "7"
+  },
+  {
+    "ProductId": 1,
+    "Name": "Telu1_36",
+    "Barcode": "1"
+  },
+  {
+    "ProductId": 1,
+    "Name": "Telu1_36",
+    "Barcode": "1"
   }
 ]

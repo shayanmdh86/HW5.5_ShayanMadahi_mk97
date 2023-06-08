@@ -14,7 +14,7 @@ namespace HW5._5_ShayanMadahi_mk97.Interface
     public class ProductRepository : IProductRepository
     {
         private bool Test;
-        private List<Product>products= new List<Product>();
+        public List<Product>products= new List<Product>();
         public string FilePath ="D:\\HW5.5_ShayanMadahi_mk97\\HW5.5_ShayanMadahi_mk97\\DataBase\\ProductJson.json";
         string Nameproduct;
 
@@ -40,7 +40,8 @@ namespace HW5._5_ShayanMadahi_mk97.Interface
                 products.Add(product);
                 JsonWriter();
             }
-            return "done";
+
+            return product.Name;
         }
 
         public string GetProductById(int id)

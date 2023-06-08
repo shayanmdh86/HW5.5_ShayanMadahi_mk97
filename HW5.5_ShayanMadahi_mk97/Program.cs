@@ -8,16 +8,10 @@ namespace HW5._5_ShayanMadahi_mk97
     {
         static void Main(string[] args)
         {
-            ProductRepository servic=new ProductRepository();
-            try
-            {
-                var pr = servic.GetProductList();
-            }
-            catch(Exception ex) 
-            {
-                Console.WriteLine(ex.Message);
-            }
-
+            ProductRepository servic = new ProductRepository();
+            Stock stock = new Stock(1, "Telu1_36", 1, 1, 1000);
+            StockRepository stockrep=new StockRepository();
+            stockrep.BuyProduct(stock);
           
 
         }
